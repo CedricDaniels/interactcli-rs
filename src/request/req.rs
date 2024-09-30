@@ -176,12 +176,14 @@ impl Request {
     }
 }
 
-pub async fn get_baidu() -> Result<Response> {
+pub async fn get_baidu() -> Result<String> {
     let client = Client::default();
     let url = Url::parse("https://www.baidu.com").map_err(|e| {
         return ResponseError::OptionError(e.to_string());
     })?;
     let resp = client.get(url).send().await.map_err(|e| {
+        return ResponseError::OptionError(e.to_string());
+    })?.text().await.map_err(|e|{
         return ResponseError::OptionError(e.to_string());
     })?;
     Result::Ok(resp)

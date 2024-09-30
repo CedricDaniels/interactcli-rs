@@ -8,6 +8,7 @@ edition = "2021"
 # To use 'RUSTFLAGS="$RUSTFLAGS -A dead_code" cargo build' not desplay dead_code warning
 
 [dependencies]
+jsonxf = "1.1"
 clap = "4.2.4"
 rustyline = "13.0.0"
 rustyline-derive = "0.10.0"

@@ -1,6 +1,6 @@
 use clap::Command;
 
-pub fn new_multi_cmd() -> Command {
+pub fn cmd_init() -> Command {
     clap::Command::new("multi")
         .about("multi")
         .subcommand(config_level2_cmd1())
